@@ -1,0 +1,20 @@
+{
+  "name": "fetch-rewards",
+  "version": "1.0.0",
+  "description": "Fetch Rewards - Backend THCC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElRemolino/fetch-rewards.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElRemolino/fetch-rewards/issues"
+  },
+  "homepage": "https://github.com/ElRemolino/fetch-rewards#readme"
+}
