@@ -25,12 +25,12 @@ class PriorityQueue {
 }
 
 
-let queue = new PriorityQueue();
-queue.insert({ "payer": "DANNON", "points": 1000, "timestamp": "2020-11-02T14:00:00Z" });
-queue.insert({ "payer": "UNILEVER", "points": 200, "timestamp": "2020-10-31T11:00:00Z" });
-queue.insert({ "payer": "MILLER COORS", "points": 10000, "timestamp": "2020-11-01T14:00:00Z" });
-queue.insert({ "payer": "DANNON", "points": -200, "timestamp": "2020-10-31T15:00:00Z" });
-console.log(queue.storage)
+const transactionQueue = new PriorityQueue();
+transactionQueue.insert({ "payer": "DANNON", "points": 1000, "timestamp": "2020-11-02T14:00:00Z" });
+transactionQueue.insert({ "payer": "UNILEVER", "points": 200, "timestamp": "2020-10-31T11:00:00Z" });
+transactionQueue.insert({ "payer": "MILLER COORS", "points": 10000, "timestamp": "2020-11-01T14:00:00Z" });
+transactionQueue.insert({ "payer": "DANNON", "points": -200, "timestamp": "2020-10-31T15:00:00Z" });
+console.log(transactionQueue.storage)
 
 // if ("2020-10-31T11:00:00Z" > "2020-10-31T15:00:00Z") {
 //   console.log('false')
