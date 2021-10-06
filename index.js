@@ -1,18 +1,14 @@
-const express = require('express');
-const PriorityQueue = require('./dataStores/PriorityQueue');
-const User = require('./dataStores/User');
-// const helper = require('./helperFunctions.js');
+import express from 'express';
+import {validate, PriorityQueue} from './helpers.js';
+
 const app = express();
 const port = 3000;
 const payers = {};
-const transactions = new PriorityQueue();
+const transactions = new PriorityQueue;
 
 app.use(express.json());
-const test = (req, res, next) => {
-  console.log('test', payers);
-  next();
-}
-app.post('/transaction',test, (req, res) => {
+
+app.post('/transaction', (req, res) => {
   const {payer, points, timestamp} = req.body;
 
   if (typeof payer !== 'string' || payer.length === 0) {
@@ -45,7 +41,7 @@ app.post('/transaction',test, (req, res) => {
       payers[payer] -= points;
       console.error('transaction error, points put payer in defecit');
       res.status(400);
-    } 
+    }
   }
   console.log(payers);
   res.json(payers);
