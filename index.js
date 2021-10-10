@@ -1,10 +1,9 @@
 import express from 'express';
-import {validate, PriorityQueue} from './helpers.js';
+import { validate } from './helpers.js';
 
 const app = express();
 const port = 3000;
 const payers = {};
-const transactions = new PriorityQueue;
 
 app.use(express.json());
 
@@ -30,7 +29,6 @@ app.post('/transaction', (req, res) => {
       res.status(400);
     }
   }
-  console.log(payers);
   res.json(payers);
 });
 
