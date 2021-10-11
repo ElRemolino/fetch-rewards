@@ -14,7 +14,7 @@ class PriorityQueue {
         if (i === 0) {
           this.storage.unshift(transaction);
         } else {
-          this.storage.splice(i - 1, 0, transaction);
+          this.storage.splice(i, 0, transaction);
         }
         isAdded = true;
         break;

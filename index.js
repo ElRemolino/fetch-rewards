@@ -12,12 +12,17 @@ app.post('/transaction', (req, res) => {
 
   validate(payer, points, timestamp);
 
-  if(!postTransaction(req.body)) {
+  if (!postTransaction(req.body)) {
     error = true;
   };
 
   res.json(payers);
 });
+
+app.get('/spend', (req, res) => {
+  console.log('test get route');
+  
+})
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

@@ -3,7 +3,6 @@ import PriorityQueue from './PriorityQueue.js';
  const payers = {};
  const transactions = new PriorityQueue();
 
-
  const postTransaction = ({ payer, points, timestamp }) => {
    if(!payers[payer]) {
      if (points < 0) {
