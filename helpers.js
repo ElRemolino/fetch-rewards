@@ -22,6 +22,10 @@ import PriorityQueue from './PriorityQueue.js';
     }
   }
 
+  const spend = () => {
+    
+  }
+
   const validate = (payer, points, timestamp) => {
    if (typeof payer !== 'string' || payer.length === 0) {
      console.error('transaction error, payer is not a valid string');

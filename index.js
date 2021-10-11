@@ -1,5 +1,6 @@
 import express from 'express';
 import { payers, postTransaction, transactions, validate } from './helpers.js';
+import setupSampleQueue from './tests.js';
 
 const app = express();
 const port = 3000;
@@ -20,8 +21,10 @@ app.post('/transaction', (req, res) => {
 });
 
 app.get('/spend', (req, res) => {
-  console.log('test get route');
+  setupSampleQueue();
+  console.log('transactions: ', transactions);
   
+  res.json(transactions)
 })
 
 app.listen(port, () => {
