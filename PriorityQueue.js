@@ -11,11 +11,7 @@ class PriorityQueue {
       const transactionDate = new Date(transaction.timestamp);
 
       if (currDate > transactionDate) {
-        if (i === 0) {
-          this.storage.unshift(transaction);
-        } else {
-          this.storage.splice(i, 0, transaction);
-        }
+        this.storage.splice(i, 0, transaction);
         isAdded = true;
         break;
       }
