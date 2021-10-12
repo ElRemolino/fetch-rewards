@@ -4,10 +4,12 @@ import PriorityQueue from './PriorityQueue.js';
  const transactions = new PriorityQueue();
 
  const postTransaction = ({ payer, points, timestamp }) => {
+   const errMsg = 'transaction error, points put payer in defecit';
+   let error = false;
+
    if(!payers[payer]) {
      if (points < 0) {
-       console.error('transaction error, points put payer in defecit');
-       res.status(400);
+      return false;
       } else {
         payers[payer] = points;
       }
@@ -16,10 +18,11 @@ import PriorityQueue from './PriorityQueue.js';
 
       if (payers[payer] < 0) {
         payers[payer] -= points;
-        console.error('transaction error, points put payer in defecit');
-        res.status(400);
+        return false;
       }
     }
+
+    return true;
   }
 
   const validate = (payer, points, timestamp) => {
@@ -38,6 +41,7 @@ import PriorityQueue from './PriorityQueue.js';
      res.sendStatus(400);
    }
  };
+
  export {
   payers,
   transactions,
